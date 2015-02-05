@@ -4,22 +4,28 @@
 import pyperclip
 
 # the string to be encrypted/decrypted
-message = 'This is my secret message.'
+#message = 'This is my secret message.'
+message = input('Enter message: ')
 
 # the encryption/decryption key
-key = 13
+#key = 13
+key = input('Enter key length (1-26): ')
+key = int(key) - 1
 
 # Tells the program to encrypt or decrypt
-mode = 'encrypt' # set to 'encrypt' or 'decrypt'
+
+mode = input('Enter "encrypt" or "decrypt": ')
+mode = mode.lower()
+#mode = 'encrypt' # set to 'encrypt' or 'decrypt'
 
 # every possible symbol that can be encrypted
-LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
+#LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LETTERS=' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`a bcdefghijklmnopqrstuvwxyz{|}~'
 # stores the encrypted/decrypted form of the message
 translated = ''
 
 # capitalize the string in message
-message = message.upper()
+#message = message.upper()
 
 # run the encryption/decryption code on each symbol in the message string
 for symbol in message:
